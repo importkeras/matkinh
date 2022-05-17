@@ -1,0 +1,419 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["common"],{
+
+/***/ "../../../libs/web/shared/ui/components/src/index.ts":
+/*!**************************************************************************************!*\
+  !*** /home/runner/work/InnoCity/InnoCity/libs/web/shared/ui/components/src/index.ts ***!
+  \**************************************************************************************/
+/*! exports provided: Section, SectionSeparator, ProfessionalCard */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _lib_section_section__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/section/section */ "../../../libs/web/shared/ui/components/src/lib/section/section.tsx");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Section", function() { return _lib_section_section__WEBPACK_IMPORTED_MODULE_0__["Section"]; });
+
+/* harmony import */ var _lib_section_separator_section_separator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./lib/section-separator/section-separator */ "../../../libs/web/shared/ui/components/src/lib/section-separator/section-separator.tsx");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SectionSeparator", function() { return _lib_section_separator_section_separator__WEBPACK_IMPORTED_MODULE_1__["SectionSeparator"]; });
+
+/* harmony import */ var _lib_professional_card_professional_card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./lib/professional-card/professional-card */ "../../../libs/web/shared/ui/components/src/lib/professional-card/professional-card.tsx");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ProfessionalCard", function() { return _lib_professional_card_professional_card__WEBPACK_IMPORTED_MODULE_2__["ProfessionalCard"]; });
+
+
+
+
+
+/***/ }),
+
+/***/ "../../../libs/web/shared/ui/components/src/lib/professional-card/professional-card.scss":
+/*!**************************************************************************************************************************!*\
+  !*** /home/runner/work/InnoCity/InnoCity/libs/web/shared/ui/components/src/lib/professional-card/professional-card.scss ***!
+  \**************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var content = __webpack_require__(/*! !../../../../../../../../node_modules/@nrwl/web/src/utils/third-party/cli-files/plugins/raw-css-loader.js!../../../../../../../../node_modules/@nrwl/web/node_modules/postcss-loader/dist/cjs.js??ref--5-oneOf-5-2!../../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--5-oneOf-5-3!./professional-card.scss */ "../../../node_modules/@nrwl/web/src/utils/third-party/cli-files/plugins/raw-css-loader.js!../../../node_modules/@nrwl/web/node_modules/postcss-loader/dist/cjs.js?!../../../node_modules/sass-loader/dist/cjs.js?!../../../libs/web/shared/ui/components/src/lib/professional-card/professional-card.scss");
+
+if (typeof content === 'string') {
+  content = [[module.i, content, '']];
+}
+
+var options = {}
+
+options.insert = "head";
+options.singleton = false;
+
+var update = __webpack_require__(/*! ../../../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js")(content, options);
+
+if (content.locals) {
+  module.exports = content.locals;
+}
+
+
+/***/ }),
+
+/***/ "../../../libs/web/shared/ui/components/src/lib/professional-card/professional-card.tsx":
+/*!*************************************************************************************************************************!*\
+  !*** /home/runner/work/InnoCity/InnoCity/libs/web/shared/ui/components/src/lib/professional-card/professional-card.tsx ***!
+  \*************************************************************************************************************************/
+/*! exports provided: ProfessionalCard, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProfessionalCard", function() { return ProfessionalCard; });
+/* harmony import */ var core_js_modules_es_symbol_description_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.symbol.description.js */ "../../../node_modules/core-js/modules/es.symbol.description.js");
+/* harmony import */ var core_js_modules_es_symbol_description_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_symbol_description_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es_array_iterator_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.array.iterator.js */ "../../../node_modules/core-js/modules/es.array.iterator.js");
+/* harmony import */ var core_js_modules_es_array_iterator_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_iterator_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/web.dom-collections.iterator.js */ "../../../node_modules/core-js/modules/web.dom-collections.iterator.js");
+/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _inno_city_web_shell_data_access_firebase__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inno-city/web/shell/data-access/firebase */ "../../../libs/web/shell/data-access/firebase/src/index.ts");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react */ "../../../node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _professional_card_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./professional-card.scss */ "../../../libs/web/shared/ui/components/src/lib/professional-card/professional-card.scss");
+/* harmony import */ var _professional_card_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_professional_card_scss__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-dev-runtime */ "../../../node_modules/react/jsx-dev-runtime.js");
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__);
+var _jsxFileName = "/home/runner/work/InnoCity/InnoCity/libs/web/shared/ui/components/src/lib/professional-card/professional-card.tsx";
+
+
+
+
+
+
+/* eslint-disable-next-line */
+
+
+function ProfessionalCard(props) {
+  const {
+    image,
+    name,
+    description,
+    className
+  } = props;
+  const [url, setUrl] = Object(react__WEBPACK_IMPORTED_MODULE_4__["useState"])('assets/imgs/members/img_avatar.png');
+  Object(react__WEBPACK_IMPORTED_MODULE_4__["useEffect"])(() => {
+    _inno_city_web_shell_data_access_firebase__WEBPACK_IMPORTED_MODULE_3__["publicStoreRef"].child(image !== null && image !== void 0 ? image : '/public/comittee/img_avatar.png').getDownloadURL().then(setUrl);
+  }, [image]);
+  return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("div", {
+    className: `flex flex-col ${className} professional-card`,
+    children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("div", {
+      className: "relative h-0 img-container",
+      children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("img", {
+        className: "absolute inset-0 object-cover w-full h-full",
+        src: url,
+        alt: name
+      }, void 0, false, {
+        fileName: _jsxFileName,
+        lineNumber: 29,
+        columnNumber: 9
+      }, this)
+    }, void 0, false, {
+      fileName: _jsxFileName,
+      lineNumber: 28,
+      columnNumber: 7
+    }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("div", {
+      className: "w-full h-1.5 bg-primary-dark"
+    }, void 0, false, {
+      fileName: _jsxFileName,
+      lineNumber: 35,
+      columnNumber: 7
+    }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("div", {
+      className: "text-lg font-medium text-center uppercase",
+      children: name
+    }, void 0, false, {
+      fileName: _jsxFileName,
+      lineNumber: 36,
+      columnNumber: 7
+    }, this), /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_6__["jsxDEV"])("div", {
+      className: "flex-grow px-1 py-2 text-lg font-light text-center description text-sm",
+      children: description
+    }, void 0, false, {
+      fileName: _jsxFileName,
+      lineNumber: 37,
+      columnNumber: 7
+    }, this)]
+  }, void 0, true, {
+    fileName: _jsxFileName,
+    lineNumber: 27,
+    columnNumber: 5
+  }, this);
+}
+/* harmony default export */ __webpack_exports__["default"] = (ProfessionalCard);
+
+/***/ }),
+
+/***/ "../../../libs/web/shared/ui/components/src/lib/section-separator/section-separator.tsx":
+/*!*************************************************************************************************************************!*\
+  !*** /home/runner/work/InnoCity/InnoCity/libs/web/shared/ui/components/src/lib/section-separator/section-separator.tsx ***!
+  \*************************************************************************************************************************/
+/*! exports provided: SectionSeparator, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SectionSeparator", function() { return SectionSeparator; });
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ "../../../node_modules/react/jsx-dev-runtime.js");
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/home/runner/work/InnoCity/InnoCity/libs/web/shared/ui/components/src/lib/section-separator/section-separator.tsx";
+
+function SectionSeparator(props) {
+  const {
+    title,
+    className = '',
+    align = 'center',
+    dark = false
+  } = props;
+  return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])("div", {
+    className: `section-separator ${align} ${dark && 'dark'} ${className}`,
+    children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])("span", {
+      children: title
+    }, void 0, false, {
+      fileName: _jsxFileName,
+      lineNumber: 16,
+      columnNumber: 7
+    }, this)
+  }, void 0, false, {
+    fileName: _jsxFileName,
+    lineNumber: 13,
+    columnNumber: 5
+  }, this);
+}
+/* harmony default export */ __webpack_exports__["default"] = (SectionSeparator);
+
+/***/ }),
+
+/***/ "../../../libs/web/shared/ui/components/src/lib/section/section.module.scss":
+/*!*************************************************************************************************************!*\
+  !*** /home/runner/work/InnoCity/InnoCity/libs/web/shared/ui/components/src/lib/section/section.module.scss ***!
+  \*************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var content = __webpack_require__(/*! !../../../../../../../../node_modules/css-loader/dist/cjs.js??ref--5-oneOf-1-1!../../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--5-oneOf-1-2!./section.module.scss */ "../../../node_modules/css-loader/dist/cjs.js?!../../../node_modules/sass-loader/dist/cjs.js?!../../../libs/web/shared/ui/components/src/lib/section/section.module.scss");
+
+if (typeof content === 'string') {
+  content = [[module.i, content, '']];
+}
+
+var options = {}
+
+options.insert = "head";
+options.singleton = false;
+
+var update = __webpack_require__(/*! ../../../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js")(content, options);
+
+if (content.locals) {
+  module.exports = content.locals;
+}
+
+
+/***/ }),
+
+/***/ "../../../libs/web/shared/ui/components/src/lib/section/section.tsx":
+/*!*****************************************************************************************************!*\
+  !*** /home/runner/work/InnoCity/InnoCity/libs/web/shared/ui/components/src/lib/section/section.tsx ***!
+  \*****************************************************************************************************/
+/*! exports provided: Section, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Section", function() { return Section; });
+/* harmony import */ var _section_module_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./section.module.scss */ "../../../libs/web/shared/ui/components/src/lib/section/section.module.scss");
+/* harmony import */ var _section_module_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_section_module_scss__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-dev-runtime */ "../../../node_modules/react/jsx-dev-runtime.js");
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/home/runner/work/InnoCity/InnoCity/libs/web/shared/ui/components/src/lib/section/section.tsx";
+
+/* eslint-disable-next-line */
+
+
+function Section(props) {
+  const {
+    className = '',
+    sectionName,
+    children,
+    light = false,
+    noPadding = false,
+    container = true
+  } = props;
+  return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_1__["jsxDEV"])("section", {
+    className: `${light ? 'bg-white' : 'bg-primary-dark text-white'} ${sectionName} flex justify-center w-full sm:px-auto`,
+    children: /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_1__["jsxDEV"])("div", {
+      className: `w-full ${container && '2xl:container'} ${className} ${!noPadding && 'px-16'}`,
+      children: children
+    }, void 0, false, {
+      fileName: _jsxFileName,
+      lineNumber: 31,
+      columnNumber: 7
+    }, this)
+  }, void 0, false, {
+    fileName: _jsxFileName,
+    lineNumber: 26,
+    columnNumber: 5
+  }, this);
+}
+/* harmony default export */ __webpack_exports__["default"] = (Section);
+
+/***/ }),
+
+/***/ "../../../node_modules/@nrwl/web/src/utils/third-party/cli-files/plugins/raw-css-loader.js!../../../node_modules/@nrwl/web/node_modules/postcss-loader/dist/cjs.js?!../../../node_modules/sass-loader/dist/cjs.js?!../../../libs/web/shared/ui/components/src/lib/professional-card/professional-card.scss":
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** /home/runner/work/InnoCity/InnoCity/node_modules/@nrwl/web/src/utils/third-party/cli-files/plugins/raw-css-loader.js!/home/runner/work/InnoCity/InnoCity/node_modules/@nrwl/web/node_modules/postcss-loader/dist/cjs.js??ref--5-oneOf-5-2!/home/runner/work/InnoCity/InnoCity/node_modules/sass-loader/dist/cjs.js??ref--5-oneOf-5-3!/home/runner/work/InnoCity/InnoCity/libs/web/shared/ui/components/src/lib/professional-card/professional-card.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = [[module.i, ".professional-card .img-container {\n  padding-bottom: 100%;\n}\n.professional-card .description {\n  min-height: 7rem;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInByb2Zlc3Npb25hbC1jYXJkLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0U7RUFDRSxvQkFBQTtBQUFKO0FBRUU7RUFDRSxnQkFBQTtBQUFKIiwiZmlsZSI6InByb2Zlc3Npb25hbC1jYXJkLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucHJvZmVzc2lvbmFsLWNhcmQge1xuICAuaW1nLWNvbnRhaW5lciB7XG4gICAgcGFkZGluZy1ib3R0b206IDEwMCU7XG4gIH1cbiAgLmRlc2NyaXB0aW9uIHtcbiAgICBtaW4taGVpZ2h0OiA3cmVtO1xuICB9XG59XG4iXX0= */", '', '']]
+
+/***/ }),
+
+/***/ "../../../node_modules/core-js/internals/array-method-is-strict.js":
+/*!****************************************************************************************************!*\
+  !*** /home/runner/work/InnoCity/InnoCity/node_modules/core-js/internals/array-method-is-strict.js ***!
+  \****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var fails = __webpack_require__(/*! ../internals/fails */ "../../../node_modules/core-js/internals/fails.js");
+
+module.exports = function (METHOD_NAME, argument) {
+  var method = [][METHOD_NAME];
+  return !!method && fails(function () {
+    // eslint-disable-next-line no-useless-call,no-throw-literal -- required for testing
+    method.call(null, argument || function () { throw 1; }, 1);
+  });
+};
+
+
+/***/ }),
+
+/***/ "../../../node_modules/core-js/modules/es.array.sort.js":
+/*!*****************************************************************************************!*\
+  !*** /home/runner/work/InnoCity/InnoCity/node_modules/core-js/modules/es.array.sort.js ***!
+  \*****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var $ = __webpack_require__(/*! ../internals/export */ "../../../node_modules/core-js/internals/export.js");
+var aFunction = __webpack_require__(/*! ../internals/a-function */ "../../../node_modules/core-js/internals/a-function.js");
+var toObject = __webpack_require__(/*! ../internals/to-object */ "../../../node_modules/core-js/internals/to-object.js");
+var fails = __webpack_require__(/*! ../internals/fails */ "../../../node_modules/core-js/internals/fails.js");
+var arrayMethodIsStrict = __webpack_require__(/*! ../internals/array-method-is-strict */ "../../../node_modules/core-js/internals/array-method-is-strict.js");
+
+var test = [];
+var nativeSort = test.sort;
+
+// IE8-
+var FAILS_ON_UNDEFINED = fails(function () {
+  test.sort(undefined);
+});
+// V8 bug
+var FAILS_ON_NULL = fails(function () {
+  test.sort(null);
+});
+// Old WebKit
+var STRICT_METHOD = arrayMethodIsStrict('sort');
+
+var FORCED = FAILS_ON_UNDEFINED || !FAILS_ON_NULL || !STRICT_METHOD;
+
+// `Array.prototype.sort` method
+// https://tc39.es/ecma262/#sec-array.prototype.sort
+$({ target: 'Array', proto: true, forced: FORCED }, {
+  sort: function sort(comparefn) {
+    return comparefn === undefined
+      ? nativeSort.call(toObject(this))
+      : nativeSort.call(toObject(this), aFunction(comparefn));
+  }
+});
+
+
+/***/ }),
+
+/***/ "../../../node_modules/core-js/modules/es.symbol.description.js":
+/*!*************************************************************************************************!*\
+  !*** /home/runner/work/InnoCity/InnoCity/node_modules/core-js/modules/es.symbol.description.js ***!
+  \*************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+// `Symbol.prototype.description` getter
+// https://tc39.es/ecma262/#sec-symbol.prototype.description
+
+var $ = __webpack_require__(/*! ../internals/export */ "../../../node_modules/core-js/internals/export.js");
+var DESCRIPTORS = __webpack_require__(/*! ../internals/descriptors */ "../../../node_modules/core-js/internals/descriptors.js");
+var global = __webpack_require__(/*! ../internals/global */ "../../../node_modules/core-js/internals/global.js");
+var has = __webpack_require__(/*! ../internals/has */ "../../../node_modules/core-js/internals/has.js");
+var isObject = __webpack_require__(/*! ../internals/is-object */ "../../../node_modules/core-js/internals/is-object.js");
+var defineProperty = __webpack_require__(/*! ../internals/object-define-property */ "../../../node_modules/core-js/internals/object-define-property.js").f;
+var copyConstructorProperties = __webpack_require__(/*! ../internals/copy-constructor-properties */ "../../../node_modules/core-js/internals/copy-constructor-properties.js");
+
+var NativeSymbol = global.Symbol;
+
+if (DESCRIPTORS && typeof NativeSymbol == 'function' && (!('description' in NativeSymbol.prototype) ||
+  // Safari 12 bug
+  NativeSymbol().description !== undefined
+)) {
+  var EmptyStringDescriptionStore = {};
+  // wrap Symbol constructor for correct work with undefined description
+  var SymbolWrapper = function Symbol() {
+    var description = arguments.length < 1 || arguments[0] === undefined ? undefined : String(arguments[0]);
+    var result = this instanceof SymbolWrapper
+      ? new NativeSymbol(description)
+      // in Edge 13, String(Symbol(undefined)) === 'Symbol(undefined)'
+      : description === undefined ? NativeSymbol() : NativeSymbol(description);
+    if (description === '') EmptyStringDescriptionStore[result] = true;
+    return result;
+  };
+  copyConstructorProperties(SymbolWrapper, NativeSymbol);
+  var symbolPrototype = SymbolWrapper.prototype = NativeSymbol.prototype;
+  symbolPrototype.constructor = SymbolWrapper;
+
+  var symbolToString = symbolPrototype.toString;
+  var native = String(NativeSymbol('test')) == 'Symbol(test)';
+  var regexp = /^Symbol\((.*)\)[^)]+$/;
+  defineProperty(symbolPrototype, 'description', {
+    configurable: true,
+    get: function description() {
+      var symbol = isObject(this) ? this.valueOf() : this;
+      var string = symbolToString.call(symbol);
+      if (has(EmptyStringDescriptionStore, symbol)) return '';
+      var desc = native ? string.slice(7, -1) : string.replace(regexp, '$1');
+      return desc === '' ? undefined : desc;
+    }
+  });
+
+  $({ global: true, forced: true }, {
+    Symbol: SymbolWrapper
+  });
+}
+
+
+/***/ }),
+
+/***/ "../../../node_modules/css-loader/dist/cjs.js?!../../../node_modules/sass-loader/dist/cjs.js?!../../../libs/web/shared/ui/components/src/lib/section/section.module.scss":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** /home/runner/work/InnoCity/InnoCity/node_modules/css-loader/dist/cjs.js??ref--5-oneOf-1-1!/home/runner/work/InnoCity/InnoCity/node_modules/sass-loader/dist/cjs.js??ref--5-oneOf-1-2!/home/runner/work/InnoCity/InnoCity/libs/web/shared/ui/components/src/lib/section/section.module.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "../../../node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, "", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ })
+
+}]);
+//# sourceMappingURL=common.js.map
